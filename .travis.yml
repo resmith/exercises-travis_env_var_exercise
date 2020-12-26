@@ -15,8 +15,8 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node theresmith/exercises-travis_env_var_exercise
+  - docker build -t exercises-travis_env_var_exercise .
+  - docker tag exercises-travis_env_var_exercise theresmith/exercises-travis_env_var_exercise
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
